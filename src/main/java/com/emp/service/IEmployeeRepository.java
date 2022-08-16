@@ -1,5 +1,10 @@
 package com.emp.service;
 
-public interface IEmployeeRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.emp.model.Employee;
+
+public interface IEmployeeRepository extends JpaRepository<Employee, Integer> {
+	
 
 }
