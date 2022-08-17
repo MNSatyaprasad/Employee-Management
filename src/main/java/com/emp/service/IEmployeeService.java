@@ -16,4 +16,6 @@ public interface IEmployeeService {
 	public void deleteEmployee(Integer id);
 	
 	public void deleteAllEmployee();
+	
+	Employee updateEmployee(Employee employee, Integer id);
 }
