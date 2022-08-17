@@ -1,9 +1,11 @@
 package com.emp.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -36,4 +38,11 @@ public class EmployeeController {
 	public List<Employee> getAllEmployee(){
 		return employeeService.getAllEmployee();
 	}
+	
+	@GetMapping("/getemployee/{id}")
+	public Optional<Employee> getEmployee(@PathVariable Integer id){
+		Optional<Employee> employee = employeeService.getEmployee(id);
+		return employee;
+	}
+	
 }
